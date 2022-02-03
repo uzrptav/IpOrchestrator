@@ -19,6 +19,7 @@ namespace WebApplication1.Controllers
             _logger = logger;
         }
 
+        //curl -X GET "https://localhost:44338/Orchestrator" -H  "accept: text/plain"
         [HttpGet]
         public string GetIP()
         {
@@ -26,6 +27,7 @@ namespace WebApplication1.Controllers
             return String.IsNullOrEmpty(_ipAddr) ? Convert.ToString(remoteIpAddress) : _ipAddr;
         }
 
+        //curl -X POST "https://localhost:44338/Orchestrator?ipaddress=192.168.1.1" -H  "accept: */*" -d ""
         [HttpPost]
         public IActionResult SetIP(string ipaddress)
         {
